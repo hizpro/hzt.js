@@ -1,0 +1,11 @@
+{
+  "name": "hzt.js",
+  "version": "1.1.0",
+  "description": "The definitive zero-config Vanilla JS engine for cinematic hero sections and premium digital portfolios. Stop building pages, start directing experiences.",
+  "main": "src/hzt.js",
+  "scripts": {
+    "start": "python -m http.server 8000"
+  },
+  "author": "Hezekiah Team",
+  "license": "MIT"
+}

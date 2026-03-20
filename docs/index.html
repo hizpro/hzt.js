@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZT Playground | Interactive Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/builder.css">
+</head>
+<body>
+
+<div class="builder-layout">
+    <aside class="control-panel">
+        <header class="panel-header">
+            <h1 data-i18n="nav_title">HZT Builder</h1>
+            <select id="lang-switcher" class="hzt-select" style="width: 70px;">
+                <option value="en">EN</option>
+                <option value="id">ID</option>
+            </select>
+        </header>
+
+        <div class="panel-section">
+            <h3 data-i18n="tab_theme">Theme Engine</h3>
+            <label data-i18n="lbl_active_theme">Active Protocol</label>
+            <select id="theme-selector" class="hzt-select">
+                <option value="dracula">Dracula Night</option>
+                <option value="aether">Aether Signature</option>
+                <option value="matrix">The Matrix</option>
+                <option value="custom">-- Custom Inject --</option>
+            </select>
+
+            <div id="custom-color-panel" style="display: none; margin-top: 15px;">
+                <label data-i18n="lbl_custom_colors">Custom Core Colors</label>
+                <div class="color-pickers">
+                    <input type="color" id="c-primary" value="#ffffff">
+                    <input type="color" id="c-secondary" value="#00f8da">
+                    <input type="color" id="c-tertiary" value="#00d7eb">
+                </div>
+                <button id="btn-inject" class="hzt-btn" data-i18n="btn_apply">Apply Changes</button>
+            </div>
+        </div>
+
+        <div class="panel-section">
+            <h3 data-i18n="tab_layout">Layout Config</h3>
+            <label data-i18n="lbl_toggle_cards" style="margin-bottom: 12px;">Toggle Arsenal Cards</label>
+            
+            <div class="toggle-group">
+                <label class="toggle-row"><input type="checkbox" class="card-toggle" data-target=".hzt-card-skm" checked> <span data-i18n="lbl_c_skm">SKM Dashboard</span></label>
+                <label class="toggle-row"><input type="checkbox" class="card-toggle" data-target=".hzt-card-converter" checked> <span data-i18n="lbl_c_converter">Data Converter</span></label>
+                <label class="toggle-row"><input type="checkbox" class="card-toggle" data-target=".hzt-card-radar" checked> <span data-i18n="lbl_c_radar">Radar Scanner</span></label>
+                <label class="toggle-row"><input type="checkbox" class="card-toggle" data-target=".hzt-card-games" checked> <span data-i18n="lbl_c_games">Community Games</span></label>
+                <label class="toggle-row"><input type="checkbox" class="card-toggle" data-target=".hzt-card-os" checked> <span data-i18n="lbl_c_os">Cross-Platform OS</span></label>
+                <label class="toggle-row"><input type="checkbox" class="card-toggle" data-target=".hzt-card-twibbon" checked> <span data-i18n="lbl_c_twibbon">Twibbon Generator</span></label>
+            </div>
+        </div>
+
+        <div class="panel-section export-section">
+            <h3 data-i18n="tab_export">Export Code</h3>
+            <p data-i18n="desc_export" style="font-size: 0.8rem; color: #8b949e; margin-bottom: 10px;">Your custom JS engine config is ready.</p>
+            <pre><code id="export-code" class="code-block">Loading...</code></pre>
+            <button id="btn-copy" class="hzt-btn" data-i18n="btn_copy">Copy Exported JS</button>
+        </div>
+    </aside>
+
+    <main class="preview-panel">
+        <div class="preview-header">
+            <span>🔴 🟡 🟢</span>
+            <span style="font-family: 'Fira Code', monospace; font-size: 12px; color: #8b949e;">Live Preview Engine</span>
+        </div>
+        <iframe id="preview-frame" src="../index.html"></iframe>
+    </main>
+</div>
+
+<script type="module" src="js/builder.js"></script>
+</body>
+</html>

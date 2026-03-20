@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hzt.js | Engineering Reality</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Montserrat:wght@700;800;900&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="src/hzt.css">
+    
+    <style>
+        .hzt-card-os { background: linear-gradient(135deg, #12001c 0%, #090C10 100%); border-color: rgba(217, 70, 239, 0.2); }
+        .hzt-card-os .hzt-tech-tag { color: #d946ef; border-color: rgba(217, 70, 239, 0.3); }
+        .hzt-card-os .hzt-status-badge { color: #d946ef; }
+        .hzt-os-icons { display: flex; gap: 15px; margin-bottom: 15px; margin-top: 10px; }
+        .hzt-os-icon-box { 
+            width: 60px; height: 60px; border-radius: 16px; 
+            background: #090C10; display: flex; justify-content: center; align-items: center;
+            position: relative; box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+        }
+        .hzt-os-icon-box::before {
+            content: ''; position: absolute; inset: -2px; border-radius: 18px; z-index: -1;
+            background: linear-gradient(135deg, #3b82f6, #d946ef, #f43f5e);
+            box-shadow: 0 0 15px rgba(217, 70, 239, 0.4);
+        }
+        .hzt-os-icon-box svg { width: 30px; height: 30px; fill: #ffffff; filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));}
+    </style>
+</head>
+<body>
+
+<div class="hzt-engine">
+
+    <nav class="hzt-nav">
+        <div class="hzt-logo">
+            <div class="hzt-logo-text hzt-text-shine" data-text="[HZT]">[HZT]</div>
+        </div>
+        <div class="hzt-nav-links-wrapper">
+            <div class="hzt-nav-links">
+                <a href="#">Core</a>
+                <a href="#work">Showcase</a>
+                <a href="#">Docs</a>
+                <a href="#" id="hzt-github-link" style="font-family: 'Fira Code', monospace; font-style: italic; color: #38bdf8; font-weight: 600; letter-spacing: -0.5px; text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);">hzt.js</a>
+            </div>
+        </div>
+        <div class="hzt-hamburger"><div></div><div></div><div></div></div>
+    </nav>
+
+    <div class="hzt-theme-controls" id="hzt-control-panel">
+        <label for="hzt-theme-picker">Protocol</label>
+        <select id="hzt-theme-picker"></select>
+    </div>
+
+    <section class="hzt-hero-slider">
+        
+        <div class="hzt-slider-nav">
+            <button class="hzt-nav-btn hzt-nav-prev">&#10094;</button>
+            <button class="hzt-nav-btn hzt-nav-next">&#10095;</button>
+        </div>
+        
+        <div class="hzt-slide hzt-active">
+            <div class="hzt-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2560&auto=format&fit=crop');"></div>
+            <div class="hzt-huge-bg-text">ENGINE</div>
+            
+            <div class="hzt-slide-content hzt-split-layout hzt-mobile-reverse">
+                <div class="hzt-txt-col">
+                    <div class="hzt-subtitle" style="color: var(--shine-2);">19 Years in the Making.</div>
+                    <div class="hzt-title-main hzt-text-shine" data-text="The Definitive Hero Section Engine.">
+                        The Definitive Hero Section Engine.
+                    </div>
+                    <div class="hzt-desc-main">
+                        <span style="color: #fff; font-weight: 800;">hzt.js</span> is the intersection of high-stakes engineering and raw artistic precision. It is the fastest, zero-config JavaScript library to build premium company portfolios and personal identities.
+                    </div>
+                    
+                    <div class="hzt-badge-container">
+                        <a href="https://github.com/hezekiahteam/hzt.js" target="_blank" class="hzt-badge hzt-npm"><span class="hzt-lbl">npm</span><span class="hzt-val">v1.1.0</span></a>
+                        <a href="https://github.com/hezekiahteam/hzt.js/blob/main/LICENSE" target="_blank" class="hzt-badge hzt-lic"><span class="hzt-lbl">license</span><span class="hzt-val">MIT</span></a>
+                        <a href="#" class="hzt-badge hzt-bld"><span class="hzt-lbl">build</span><span class="hzt-val">passing</span></a>
+                        <a href="#" class="hzt-badge hzt-siz"><span class="hzt-lbl">bundle</span><span class="hzt-val">1.4KB</span></a>
+                    </div>
+
+                    <div class="hzt-btn-container">
+                        <button class="hzt-btn-epic hzt-btn-primary">Core Features</button>
+                        <button class="hzt-btn-epic">Live Playground</button>
+                    </div>
+                </div>
+                
+                <div class="hzt-img-col">
+                    <div class="hzt-radar-wrapper">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" class="hzt-radar-svg">
+                            <circle cx="200" cy="150" r="120" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" stroke-dasharray="2,4"/>
+                            <circle cx="200" cy="150" r="80" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1"/>
+                            <circle cx="200" cy="150" r="40" fill="none" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
+                            <path d="M 200 150 L 200 30 A 120 120 0 0 1 280 60 Z" fill="url(#radar-gradient)" class="hzt-radar-sweep"/>
+                            <defs>
+                                <linearGradient id="radar-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="rgba(255, 255, 255, 0)"/><stop offset="100%" stop-color="rgba(255, 255, 255, 0.3)"/>
+                                </linearGradient>
+                            </defs>
+                            
+                            <circle cx="200" cy="150" r="4" fill="#ffffff"/>
+                            <circle cx="200" cy="150" r="15" fill="none" stroke="#ffffff" stroke-width="2" class="hzt-map-ping hzt-d1"/>
+                            <rect x="165" y="160" width="70" height="14" class="hzt-map-badge-rect" stroke="#ffffff"/>
+                            <text x="200" y="170" fill="#f8fafc" class="hzt-map-badge-txt">HZT CORE</text>
+                            
+                            <path d="M 200 150 L 200 40" fill="none" stroke="var(--c-perf)" stroke-width="1.5" class="hzt-attack-line"/>
+                            <circle cx="200" cy="40" r="4" fill="var(--c-perf)"/>
+                            <text x="210" y="38" fill="var(--c-perf)" class="hzt-sector-title">PERFORMANCE</text>
+                            <text x="210" y="48" fill="#94a3b8" class="hzt-sector-desc">(Detected: &lt; 2ms Load)</text>
+                            <circle cx="200" cy="40" r="10" fill="none" stroke="var(--c-perf)" class="hzt-map-ping hzt-d2"/>
+                            
+                            <path d="M 200 150 L 300 80" fill="none" stroke="var(--c-vis)" stroke-width="1.5" class="hzt-attack-line"/>
+                            <circle cx="300" cy="80" r="4" fill="var(--c-vis)"/>
+                            <text x="310" y="78" fill="var(--c-vis)" class="hzt-sector-title">VISIBILITY</text>
+                            <text x="310" y="88" fill="#94a3b8" class="hzt-sector-desc">(Detected: SEO Perfect)</text>
+                            <circle cx="300" cy="80" r="10" fill="none" stroke="var(--c-vis)" class="hzt-map-ping hzt-d3"/>
+                            
+                            <path d="M 200 150 L 310 210" fill="none" stroke="var(--c-anim)" stroke-width="1.5" class="hzt-attack-line"/>
+                            <circle cx="310" cy="210" r="4" fill="var(--c-anim)"/>
+                            <text x="320" y="208" fill="var(--c-anim)" class="hzt-sector-title">ANIMATION</text>
+                            <text x="320" y="218" fill="#94a3b8" class="hzt-sector-desc">(Detected: Fluid 60fps)</text>
+                            <circle cx="310" cy="210" r="10" fill="none" stroke="var(--c-anim)" class="hzt-map-ping hzt-d4"/>
+                            
+                            <path d="M 200 150 L 200 260" fill="none" stroke="var(--c-arch)" stroke-width="1.5" class="hzt-attack-line"/>
+                            <circle cx="200" cy="260" r="4" fill="var(--c-arch)"/>
+                            <text x="200" y="275" fill="var(--c-arch)" text-anchor="middle" class="hzt-sector-title">ARCHITECTURE</text>
+                            <text x="200" y="285" fill="#94a3b8" text-anchor="middle" class="hzt-sector-desc">(Detected: Zero Dependencies)</text>
+                            <circle cx="200" cy="260" r="10" fill="none" stroke="var(--c-arch)" class="hzt-map-ping hzt-d1"/>
+                            
+                            <path d="M 200 150 L 90 210" fill="none" stroke="var(--c-int)" stroke-width="1.5" class="hzt-attack-line"/>
+                            <circle cx="90" cy="210" r="4" fill="var(--c-int)"/>
+                            <text x="80" y="208" fill="var(--c-int)" text-anchor="end" class="hzt-sector-title">INTEGRATION</text>
+                            <text x="80" y="218" fill="#94a3b8" text-anchor="end" class="hzt-sector-desc">(Detected: Dev-First API)</text>
+                            <circle cx="90" cy="210" r="10" fill="none" stroke="var(--c-int)" class="hzt-map-ping hzt-d2"/>
+                            
+                            <path d="M 200 150 L 80 80" fill="none" stroke="var(--c-aes)" stroke-width="1.5" class="hzt-attack-line"/>
+                            <circle cx="80" cy="80" r="4" fill="var(--c-aes)"/>
+                            <text x="70" y="78" fill="var(--c-aes)" text-anchor="end" class="hzt-sector-title">AESTHETICS</text>
+                            <text x="70" y="88" fill="#94a3b8" text-anchor="end" class="hzt-sector-desc">(Detected: Artistic Balance)</text>
+                            <circle cx="80" cy="80" r="10" fill="none" stroke="var(--c-aes)" class="hzt-map-ping hzt-d3"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hzt-slide">
+            <div class="hzt-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2560&auto=format&fit=crop');"></div>
+            <div class="hzt-huge-bg-text">SYSTEM</div>
+            <div class="hzt-slide-content hzt-split-layout">
+                <div class="hzt-txt-col">
+                    <div class="hzt-subtitle" style="color: var(--shine-2);">Engineering</div>
+                    <div class="hzt-title-main hzt-text-shine" data-text="The Developer's Playground.">
+                        The Developer's Playground.
+                    </div>
+                    <div class="hzt-desc-main" style="margin-bottom: 20px;">
+                        Designed for CTOs and Lead Engineers. <span style="color:#fff; font-weight:bold;">hzt.js</span> bypasses Virtual DOM overhead by utilizing pure Vanilla JS and GPU-accelerated rendering. 
+                    </div>
+                    <ul class="hzt-tech-list">
+                        <li><strong>Zero Reflows:</strong> Native IntersectionObserver & requestAnimationFrame ensures buttery smooth 60fps.</li>
+                        <li><strong>100% Configurable:</strong> Control themes, speeds, and triggers exclusively via CSS Variables.</li>
+                    </ul>
+                    <div class="hzt-btn-container">
+                        <button class="hzt-btn-epic" style="border-color: var(--shine-2); color: #fff; background: rgba(255, 255, 255, 0.05);">Read Documentation</button>
+                    </div>
+                </div>
+                
+                <div class="hzt-img-col">
+                    <div class="hzt-code-wrapper">
+                        <div class="hzt-code-header">
+                            <div class="hzt-code-dot r"></div><div class="hzt-code-dot y"></div><div class="hzt-code-dot g"></div>
+                            <span style="font-family: 'Inter', sans-serif; font-size: 0.7rem; color: #94a3b8; margin-left: 10px;">main.js — hzt-engine</span>
+                        </div>
+                        <div class="hzt-code-body">
+<pre><code><span class="hzt-c-cm">// 1. Import the core engine</span>
+<span class="hzt-c-kw">import</span> HZT <span class="hzt-c-kw">from</span> <span class="hzt-c-st">'./src/hzt.js'</span>;
+
+<span class="hzt-c-cm">// 2. Configure Modules & Themes</span>
+<span class="hzt-c-fn">HZT.Theme.add</span>({
+    <span class="hzt-c-st">id</span>: <span class="hzt-c-st">'dracula'</span>,
+    <span class="hzt-c-st">colors</span>: [<span class="hzt-c-st">'#f8f8f2'</span>, <span class="hzt-c-st">'#ff79c6'</span>, <span class="hzt-c-st">'#bd93f9'</span>]
+});
+
+<span class="hzt-c-cm">// 3. Initialize Engine</span>
+<span class="hzt-c-fn">HZT.init</span>();</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hzt-slide">
+            <div class="hzt-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2560&auto=format&fit=crop'); filter: brightness(0.15);"></div>
+            <div class="hzt-huge-bg-text">CAFFEINE</div>
+            <div class="hzt-slide-content hzt-split-layout hzt-mobile-reverse">
+                <div class="hzt-txt-col">
+                    <div class="hzt-subtitle">Premium Experience</div>
+                    <div class="hzt-title-main hzt-text-shine" data-text="Stop Building Pages. Start Directing Experiences.">
+                        Stop Building Pages.<br>Start Directing Experiences.
+                    </div>
+                    <div class="hzt-desc-main">
+                        <span style="color: #fff; font-weight: 800;">hzt.js</span> transforms static layouts into epic, cinematic journeys. Powered by precision micro-interactions, it delivers the premium feel of a Fortune 500 tech brand.
+                    </div>
+                    <div class="hzt-btn-container">
+                        <a href='https://ko-fi.com/G2G61W9NCO' target='_blank' style='display: inline-block; transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);' onmouseover="this.style.transform='scale(1.05) translateY(-3px)'" onmouseout="this.style.transform='scale(1) translateY(0)'">
+                            <img height='36' style='border:0px;height:36px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.5);' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hzt-img-col">
+                    <div class="hzt-coffee-wrapper" style="transform: scale(1.3);">
+                        <div class="hzt-coffee-glow"></div>
+                        <div class="hzt-cangkir"></div><div class="hzt-handle"></div><div class="hzt-saucer"></div>
+                        <div class="hzt-uap-container">
+                            <svg viewBox="0 0 200 200" style="overflow: visible;">
+                                <path class="hzt-uap-path hzt-p1" d="M 75,190 Q 50,150 75,110 Q 100,70 75,30" />
+                                <path class="hzt-uap-path hzt-p2" d="M 100,195 Q 140,140 100,80 Q 60,30 100,-20" />
+                                <path class="hzt-uap-path hzt-p3" d="M 125,190 Q 150,150 125,110 Q 100,70 125,30" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="hzt-arsenal-section">
+        <div class="hzt-container">
+            <header style="text-align: center; margin-bottom: 4rem;">
+                <h1 class="hzt-elite-title hzt-animate">DIGITAL ARSENAL</h1>
+                <p class="hzt-elite-subtitle hzt-animate" style="transition-delay: 0.2s;">
+                    <span class="hzt-terminal-prompt">>_</span> ELITE ENGINEERING & PROOF OF WORK <span class="hzt-blink-cursor"></span>
+                </p>
+            </header>
+
+            <main class="hzt-bento-grid">
+                
+                <div class="hzt-bento-card hzt-col-span-4" style="background: linear-gradient(135deg, #0f172a 0%, #020617 100%);">
+                    <div class="hzt-ceo-layout">
+                        <div class="hzt-ceo-info">
+                            <h2 class="hzt-card-title" style="font-size: 2.2rem; margin-bottom: 0.8rem; color: #fff;">Hezekiah Team</h2>
+                            <p class="hzt-card-desc" style="font-size: 1.05rem; max-width: 95%;">Tech Developer & UI/UX Designer. Fokus membangun arsitektur digital yang solutif, otomatisasi alur kerja tingkat lanjut, dan mengubah kumpulan data mentah menjadi wawasan visual yang actionable.</p>
+                        </div>
+                        <div class="hzt-ceo-stats">
+                            <div class="hzt-stat-row">
+                                <div class="hzt-stat-labels"><span>System Architecture & Engineering</span></div>
+                                <div class="hzt-stat-bar-bg"><div class="hzt-stat-bar-fill" data-width="95%"></div></div>
+                            </div>
+                            <div class="hzt-stat-row">
+                                <div class="hzt-stat-labels"><span>Data Automation & Logic Processing</span></div>
+                                <div class="hzt-stat-bar-bg"><div class="hzt-stat-bar-fill" data-width="90%"></div></div>
+                            </div>
+                            <div class="hzt-stat-row">
+                                <div class="hzt-stat-labels"><span>UI/UX & Visual Communication</span></div>
+                                <div class="hzt-stat-bar-bg"><div class="hzt-stat-bar-fill" data-width="85%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="hzt-bento-card hzt-card-skm hzt-col-span-2 hzt-row-span-2" style="transition-delay: 0.1s;">
+                    <div class="hzt-bg-art hzt-art-skm"></div>
+                    <div class="hzt-card-header"><div class="hzt-status-badge"><div class="hzt-pulse hzt-static"></div> SISTEM TERINTEGRASI</div></div>
+                    <div>
+                        <h2 class="hzt-card-title" style="font-size: 2.2rem;">SKM Dashboard<br>Integration</h2>
+                        <p class="hzt-card-desc" style="font-size: 1.1rem; margin-top: 1rem;">Otomatisasi penarikan data Google Sheets ke MySQL yang divisualisasikan menggunakan Looker Studio.</p>
+                        <div class="hzt-tech-stack"><span class="hzt-tech-tag">Apps Script</span><span class="hzt-tech-tag">Tailwind</span><span class="hzt-tech-tag">MySQL</span></div>
+                    </div>
+                </a>
+
+                <a href="#" class="hzt-bento-card hzt-card-converter hzt-col-span-2" style="transition-delay: 0.2s;">
+                    <div class="hzt-bg-art hzt-art-converter"><div class="hzt-bar"></div><div class="hzt-bar"></div><div class="hzt-bar"></div><div class="hzt-bar"></div><div class="hzt-bar"></div></div>
+                    <div class="hzt-card-header"><div class="hzt-status-badge"><div class="hzt-pulse"></div> AUTOMATION</div></div>
+                    <div style="max-width: 90%;">
+                        <h2 class="hzt-card-title">Data to Dashboard<br>Converter</h2>
+                        <p class="hzt-card-desc">Sistem pengolah data cerdas. Mengonversi raw data dari vendor pihak ketiga menjadi dashboard interaktif.</p>
+                        <div class="hzt-tech-stack"><span class="hzt-tech-tag">React / Vue.js</span><span class="hzt-tech-tag">Data Engine</span></div>
+                    </div>
+                </a>
+
+                <a href="#" class="hzt-bento-card hzt-card-radar hzt-col-span-2" style="transition-delay: 0.3s;">
+                    <div class="hzt-bg-art hzt-art-radar"></div>
+                    <div class="hzt-card-header"><div class="hzt-status-badge"><div class="hzt-pulse hzt-static"></div> ON-DEMAND TOOL</div></div>
+                    <div style="max-width: 85%;">
+                        <h2 class="hzt-card-title">HZT Radar Scanner</h2>
+                        <p class="hzt-card-desc" style="margin-top:0.5rem;">Perangkat analisa taktis berbasis request untuk memetakan perimeter web secara efisien.</p>
+                        <div class="hzt-tech-stack"><span class="hzt-tech-tag">Node.js</span><span class="hzt-tech-tag">WebSockets</span></div>
+                    </div>
+                </a>
+
+                <a href="#" class="hzt-bento-card hzt-card-games hzt-col-span-2" style="transition-delay: 0.4s;">
+                    <div class="hzt-bg-art hzt-art-games"><div class="hzt-card-shape"></div><div class="hzt-card-shape"></div></div>
+                    <div class="hzt-card-header"><div class="hzt-status-badge"><div class="hzt-pulse"></div> INTERAKTIF</div></div>
+                    <div style="max-width: 80%;">
+                        <h2 class="hzt-card-title">Community Games</h2>
+                        <p class="hzt-card-desc">Kumpulan permainan berbasis web yang atraktif dengan micro-interactions.</p>
+                        <div class="hzt-tech-stack"><span class="hzt-tech-tag">HTML5 Canvas</span><span class="hzt-tech-tag">Vanilla JS</span></div>
+                    </div>
+                </a>
+
+                <a href="#" class="hzt-bento-card hzt-card-os hzt-col-span-2" style="transition-delay: 0.5s;">
+                    <div class="hzt-card-header"><div class="hzt-status-badge"><div class="hzt-pulse hzt-static"></div> UNIVERSAL</div></div>
+                    <div>
+                        <div class="hzt-os-icons">
+                            <div class="hzt-os-icon-box">
+                                <svg viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.951-1.801"/></svg>
+                            </div>
+                            <div class="hzt-os-icon-box">
+                                <svg viewBox="0 0 24 24"><path d="M12 20.604c-1.479.223-3.514-.908-4.67-2.61-1.88-2.766-1.554-6.852.298-8.736 1.092-1.111 2.505-1.584 3.791-1.393 1.505.223 3.011 1.258 3.844 1.258.859 0 2.65-1.233 4.453-1.042 1.34.088 2.571.603 3.328 1.691-3.155 1.83-2.68 5.799.398 6.969-.731 1.95-1.637 3.52-3.181 5.753-1.328 1.932-2.738 3.864-4.908 3.864-2.128 0-2.827-1.196-5.321-1.196-2.476 0-3.272 1.157-5.385 1.157-2.188 0-3.666-1.932-4.996-3.864-2.316-3.375-4.103-8.547-2.585-11.758 1.144-2.42 3.42-3.957 5.922-3.957 2.062 0 3.978 1.286 5.234 1.286 1.272 0 3.57-1.536 6.073-1.309.832.067 3.197.332 4.707 2.457-3.987 2.277-3.398 7.322.954 8.95-1.026 2.65-2.22 4.67-4.153 7.42-1.547 2.193-3.234 4.385-5.632 4.385-2.366 0-3.14-1.39-5.836-1.39-2.68 0-3.36 1.39-5.867 1.39zM16.634 3.284c.83-1.002 1.39-2.395 1.24-3.795-1.205.048-2.655.803-3.528 1.848-.777.933-1.39 2.361-1.207 3.727 1.353.104 2.662-.777 3.495-1.78z"/></svg>
+                            </div>
+                            <div class="hzt-os-icon-box">
+                                <svg viewBox="0 0 24 24"><path d="M12 0C8.423 0 5.4 3.023 5.4 6.6v.6c0 1.281.332 2.518.938 3.593-.655 1.135-1.038 2.443-1.038 3.807 0 4.142 3.358 7.5 7.5 7.5s7.5-3.358 7.5-7.5c0-1.364-.383-2.672-1.038-3.807.606-1.075.938-2.312.938-3.593V6.6C19.2 3.023 16.177 0 12 0zm0 1.5c2.816 0 5.1 2.284 5.1 5.1v.6c0 .762-.178 1.493-.496 2.158-1.309-1.289-3.031-2.158-4.904-2.158-1.873 0-3.595.869-4.904 2.158-.318-.665-.496-1.396-.496-2.158v-.6c0-2.816 2.284-5.1 5.1-5.1zm-4.5 10.8c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm9 0c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5z"/></svg>
+                            </div>
+                        </div>
+                        <h2 class="hzt-card-title" style="font-size: 1.4rem;">Cross-Platform Deploy</h2>
+                        <p class="hzt-card-desc" style="font-size: 0.9rem; margin-top: 0.5rem;">Native support and optimized builds for Windows, macOS, and Linux architecture.</p>
+                        <div class="hzt-tech-stack"><span class="hzt-tech-tag">Desktop</span><span class="hzt-tech-tag">Server</span></div>
+                    </div>
+                </a>
+
+                <a href="#" class="hzt-bento-card hzt-card-twibbon hzt-col-span-2" style="transition-delay: 0.6s;">
+                    <div class="hzt-bg-art hzt-art-twibbon"></div>
+                    <div class="hzt-card-header"><div class="hzt-status-badge"><div class="hzt-pulse"></div> LIVE</div></div>
+                    <div>
+                        <h2 class="hzt-card-title">Multi-Frame<br>Twibbon Gen</h2>
+                        <p class="hzt-card-desc">Generator gambar dinamis untuk manajemen kampanye marketing massal.</p>
+                        <div class="hzt-tech-stack"><span class="hzt-tech-tag">PHP Architecture</span><span class="hzt-tech-tag">Canvas API</span></div>
+                    </div>
+                </a>
+
+                <a href="#" class="hzt-bento-card hzt-card-yamau hzt-col-span-4" style="transition-delay: 0.7s;">
+                    <div class="hzt-bg-art hzt-art-yamau"></div>
+                    <div class="hzt-coffee-wrapper" style="position: absolute; bottom: 20px; right: 50px; transform: scale(0.65); opacity: 0.8; z-index: 0; pointer-events: none;">
+                        <div class="hzt-cangkir"></div><div class="hzt-handle"></div><div class="hzt-saucer"></div>
+                        <div class="hzt-uap-container">
+                            <svg viewBox="0 0 200 200" style="overflow: visible;">
+                                <path class="hzt-uap-path hzt-p1" d="M 75,190 Q 50,150 75,110 Q 100,70 75,30" />
+                                <path class="hzt-uap-path hzt-p2" d="M 100,195 Q 140,140 100,80 Q 60,30 100,-20" />
+                                <path class="hzt-uap-path hzt-p3" d="M 125,190 Q 150,150 125,110 Q 100,70 125,30" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="hzt-card-header"><div class="hzt-status-badge"><div class="hzt-pulse"></div> LIVE</div></div>
+                    <div style="max-width: 60%;">
+                        <h2 class="hzt-card-title">Kedai Yamau Web</h2>
+                        <p class="hzt-card-desc">Pengembangan platform web modern dan perancangan brand identity digital ekosistem F&B.</p>
+                        <div class="hzt-tech-stack"><span class="hzt-tech-tag">Next.js</span><span class="hzt-tech-tag">Figma UI/UX</span></div>
+                    </div>
+                </a>
+
+                <a href="#" class="hzt-bento-card hzt-card-ai hzt-col-span-2" style="transition-delay: 0.8s;">
+                    <div class="hzt-bg-art hzt-art-ai"></div>
+                    <div class="hzt-card-header"><span style="font-family:monospace; font-size:0.75rem; color:var(--text-muted); font-weight: 600;">[ R&D LAB ]</span></div>
+                    <div>
+                        <h2 class="hzt-card-title" style="font-size: 1.4rem;">AI Photo Culling</h2>
+                        <p class="hzt-card-desc" style="font-size: 0.9rem; margin-top: 0.5rem;">Sistem cerdas penyortir foto otomatis dengan algoritma Tiled Laplacian.</p>
+                        <div class="hzt-tech-stack"><span class="hzt-tech-tag">Python & OpenCV</span><span class="hzt-tech-tag">NIMA AI</span></div>
+                    </div>
+                </a>
+
+                <a href="#" class="hzt-bento-card hzt-card-veronica hzt-col-span-2" style="transition-delay: 0.9s;">
+                    <div class="hzt-bg-art hzt-art-veronica"></div>
+                    <div class="hzt-card-header"><span style="font-family:monospace; font-size:0.75rem; color:var(--shine-2); font-weight: 600;">[ PROJECT INITIATIVE ]</span></div>
+                    <div>
+                        <h2 class="hzt-card-title" style="font-size: 1.4rem;">Project Veronica</h2>
+                        <p class="hzt-card-desc" style="font-size: 0.9rem; margin-top: 0.5rem;">Asisten AI personal terintegrasi berbasis Voice Command dan Natural Language.</p>
+                        <div class="hzt-tech-stack"><span class="hzt-tech-tag">Gemini API</span><span class="hzt-tech-tag">Biometric Vision</span></div>
+                    </div>
+                </a>
+            </main>
+        </div>
+    </section>
+
+    <section class="hzt-cta-section hzt-animate">
+        <div class="hzt-tracer-card" id="hzt-magnetic-cta">
+            <div class="hzt-cta-inner">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px; font-weight: 900;">Ready to Level Up?</h2>
+                <div class="hzt-btn-container" style="justify-content: center;">
+                    <a href="https://github.com/hezekiahteam/hzt.js" target="_blank" style="text-decoration:none;"><button class="hzt-btn-epic">View on GitHub</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="hzt-modal-overlay" id="hzt-github-modal">
+        <div class="hzt-modal-tracer">
+            <div class="hzt-modal-inner">
+                <h3 class="hzt-subtitle" style="color: var(--shine-2); margin-bottom: 15px;">EXTERNAL BREACH DETECTED</h3>
+                <div class="hzt-btn-container" style="justify-content: center; gap: 20px;">
+                    <button class="hzt-btn-epic" id="hzt-btnStay">STAY</button>
+                    <button class="hzt-btn-epic hzt-btn-primary" id="hzt-btnHangOut">HANG OUT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hzt-embed-overlay" id="hzt-embed-overlay">
+        <iframe id="hzt-githubFrame" src="" title="GitHub Space"></iframe>
+        <button class="hzt-way-back-home" id="hzt-btnWayBack">
+            <span class="hzt-text-shine" data-text="WAY TO BACK HOME">WAY TO BACK HOME</span>
+        </button>
+    </div>
+
+</div> 
+
+<script type="module" src="./main.js"></script>
+
+</body>
+</html>
